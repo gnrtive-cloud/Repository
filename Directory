@@ -131,6 +131,11 @@
                                 A major digital lender offering business checking accounts and flexible lines of credit. Their services are centered around technology for easy management of business finances.
                             </p>
                         </a>
+                        <div class="mt-3">
+                            <a href="https://www.trustpilot.com/review/bluevine.com" target="_blank" rel="noopener noreferrer sponsored" class="text-sm font-semibold text-finance-blue hover:underline">
+                                 Read reviews on Trustpilot
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -144,40 +149,37 @@
                                 Specializes in term loans for larger growth projects and refinancing. They typically require a strong credit history and at least 2 years in business for best rates.
                             </p>
                         </a>
+                        <div class="mt-3">
+                            <a href="https://www.trustpilot.com/review/fundingcircle.com" target="_blank" rel="noopener noreferrer sponsored" class="text-sm font-semibold text-finance-blue hover:underline">
+                                Read reviews on Trustpilot
+                            </a>
+                         </div>
                     </div>
                 </div>
 
-                <!-- 6. Kabbage/Amex -->
+                <!-- 6. American Express -->
                 <div class="card group">
                     <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
-                        <a href="https://www.americanexpress.com/en-us/business/kabbage/" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                        <a href="https://https://www.americanexpress.com/en-us/business/blueprint/business-line-of-credit/?inav=us_menu_business_business_services_business_line_of_credit/" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
                             <img src="https://placehold.co/300x80/1F2937/6EE7B7?text=Kabbage+%26+Amex" alt="Kabbage/Amex Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
                             <h3 class="text-lg font-bold text-gray-900 mb-2">Kabbage/Amex</h3>
                             <p class="text-sm text-gray-600 leading-snug">
                                 Provides fast lines of credit backed by American Express. They focus on providing revolving credit for cash flow gaps, often reviewing business bank data for approval.
                             </p>
                         </a>
-                    </div>
-                </div>
-                
-                <!-- 7. Lendio -->
-                <div class="card group">
-                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
-                        <a href="https://www.lendio.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
-                            <img src="https://placehold.co/300x80/FF6347/FFFFFF?text=Lendio" alt="Lendio Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
-                            <h3 class="text-lg font-bold text-gray-900 mb-2">Lendio</h3>
-                            <p class="text-sm text-gray-600 leading-snug">
-                                An online platform that matches business owners with a wide variety of loan products from multiple lenders. Great for comparing options across the market in one place.
-                            </p>
-                        </a>
+                        <div class="mt-3">
+                            <a href="https://www.trustpilot.com/review/kabbage.com" target="_blank" rel="noopener noreferrer sponsored" class="text-sm font-semibold text-finance-blue hover:underline">
+                                Read reviews on Trustpilot
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 8. Credibility Capital -->
+                <!-- 8. Block Equity Group -->
                 <div class="card group">
                     <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
-                        <a href="https://www.credibilitycapital.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
-                            <img src="https://placehold.co/300x80/546E7A/FFFFFF?text=Credibility+Capital" alt="Credibility Capital Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                        <a href="https://https://www.blockequitygr.com/" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/546E7A/FFFFFF?text=Blockequity+Group" alt="Credibility Capital Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
                             <h3 class="text-lg font-bold text-gray-900 mb-2">Credibility Capital</h3>
                             <p class="text-sm text-gray-600 leading-snug">
                                 Provides fixed-rate term loans, often partnering with banks for their funding. They focus on businesses with strong fundamentals seeking predictable repayment schedules.

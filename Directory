@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Title: Optimized for comparison and directory search intent -->
+    <title>Top 20+ Small Business Loan Lenders & Funding Directory - BusinessLoanProfile.online</title>
+    <!-- SEO Meta Description: Clear value proposition for organic snippets -->
+    <meta name="description" content="Access our curated directory of the top 20+ Small Business Loan Lenders, including OnDeck, BlueVine, and more. Compare funding options and start your centralized application at BusinessLoanProfile.com.">
+
+    <!-- Load Tailwind CSS from CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind Configuration for custom colors and fonts
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'finance-blue': '#1D4ED8', // Primary CTA/Brand Blue
+                        'background-light': '#F9FAFB', // Light background
+                        'accent-green': '#059669', // Secondary accent color
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Use Inter font
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Import Inter font for professional appearance */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-background-light min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="shadow-md bg-white z-10 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            
+            <!-- Logo/Brand Name: Links back to the new directory domain for internal navigation -->
+            <a href="/" class="text-2xl font-extrabold text-finance-blue tracking-wider">Lender<span class="text-gray-500">Directory</span></a>
+            
+            <!-- Main CTA to Primary Application Site (Crucial Link Equity Transfer) -->
+            <div class="flex items-center space-x-4">
+                <a href="https://businessloanprofile.com/#apply" target="_blank" class="px-6 py-2 border border-transparent text-base font-medium rounded-xl text-white bg-finance-blue hover:bg-blue-800 transition duration-150 ease-in-out shadow-lg transform hover:scale-105">
+                    Start Your Centralized Application
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: Lender Grid & SEO H1 -->
+    <section class="flex-grow pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- H1 Tag: The most important element for search rankings -->
+            <div class="mb-12 sm:mb-16">
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Top 20+ Small Business Loan Lenders & Business Funding Options
+                </h1>
+                <p class="max-w-4xl mx-auto text-xl text-gray-600">
+                    Compare funding partners or use our simplified profile application to get matched across the entire network.
+                </p>
+            </div>
+            
+            <!-- Partner Directory Grid (Responsive Layout) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- 1. OnDeck -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.ondeck.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/1D4ED8/FFFFFF?text=OnDeck" alt="OnDeck Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">OnDeck</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                OnDeck specializes in fast term loans and flexible business lines of credit. They often require 1+ year in business and moderate monthly revenue. Excellent for working capital needs.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Everest Business Funding -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://everestbusinessfunding.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/FBBF24/1F2937?text=Everest+Funding" alt="Everest Business Funding Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Everest Business Funding</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Provides Merchant Cash Advances (MCAs), which are ideal for businesses with high credit card sales but potentially lower credit scores. Repayment is a small percentage of daily sales.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Lexington Capital Holdings -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://lexingtoncapitalholdings.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/4B5563/FFFFFF?text=Lexington+Capital" alt="Lexington Capital Holdings Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Lexington Capital</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Offers flexible growth funding solutions, often catering to businesses that need quick capital without the rigid structure of traditional bank loans. Known for fast approvals.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. BlueVine -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://www.bluevine.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/007AFF/FFFFFF?text=BlueVine" alt="BlueVine Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">BlueVine</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                A major digital lender offering business checking accounts and flexible lines of credit. Their services are centered around technology for easy management of business finances.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 5. Funding Circle -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.fundingcircle.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/38A169/FFFFFF?text=Funding+Circle" alt="Funding Circle Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Funding Circle</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Specializes in term loans for larger growth projects and refinancing. They typically require a strong credit history and at least 2 years in business for best rates.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Kabbage/Amex -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://www.americanexpress.com/en-us/business/kabbage/" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/1F2937/6EE7B7?text=Kabbage+%26+Amex" alt="Kabbage/Amex Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Kabbage/Amex</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Provides fast lines of credit backed by American Express. They focus on providing revolving credit for cash flow gaps, often reviewing business bank data for approval.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 7. Lendio -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.lendio.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/FF6347/FFFFFF?text=Lendio" alt="Lendio Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Lendio</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                An online platform that matches business owners with a wide variety of loan products from multiple lenders. Great for comparing options across the market in one place.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 8. Credibility Capital -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://www.credibilitycapital.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/546E7A/FFFFFF?text=Credibility+Capital" alt="Credibility Capital Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Credibility Capital</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Provides fixed-rate term loans, often partnering with banks for their funding. They focus on businesses with strong fundamentals seeking predictable repayment schedules.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 9. Rapid Finance -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.rapidfinance.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/6D28D9/FFFFFF?text=Rapid+Finance" alt="Rapid Finance Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Rapid Finance</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Offers a wide suite of products, including short-term loans, lines of credit, and merchant cash advances. Excellent source for borrowers with varied eligibility requirements.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 10. Fundbox -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://fundbox.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/3B82F6/FFFFFF?text=Fundbox" alt="Fundbox Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Fundbox</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Known primarily for invoice factoring (getting paid on outstanding invoices fast) and a line of credit product. Quick funding for businesses with B2B billing cycles.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 11. SmartBiz -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.smartbizloans.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/28A745/FFFFFF?text=SmartBiz" alt="SmartBiz Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">SmartBiz</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Specializes in connecting applicants with bank partners for SBA loans and commercial real estate loans. Good for long-term, lower-rate financing but requires strong credit.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 12. LendingClub -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://www.lendingclub.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/FFC107/1F2937?text=LendingClub" alt="LendingClub Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">LendingClub</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Offers personal and small business loans through a peer-to-peer lending model. Business loan eligibility can be strict, focusing on established companies with high credit scores.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 13. LoanBuilder (PayPal) -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.loanbuilder.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/004085/FFFFFF?text=LoanBuilder" alt="LoanBuilder Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">LoanBuilder (PayPal)</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Provides quick, short-term working capital loans, especially appealing to businesses that use PayPal frequently. Streamlined application process with fast funding.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 14. Accion -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://us.accion.org" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/E83E8C/FFFFFF?text=Accion" alt="Accion Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Accion</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                A leading non-profit organization offering microloans and advisory services. They are focused on supporting underserved small business owners who may not qualify for traditional funding.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 15. Balboa Capital -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.balboacapital.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/20C997/FFFFFF?text=Balboa+Capital" alt="Balboa Capital Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Balboa Capital</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Offers equipment financing and lines of credit. Excellent for businesses needing to purchase machinery or technology, with the equipment serving as collateral.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 16. Taycor Financial -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://taycor.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/6610F2/FFFFFF?text=Taycor+Financial" alt="Taycor Financial Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Taycor Financial</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Specializes in equipment leasing and financing for business assets. They provide flexible structures to acquire necessary machinery without a large upfront capital expenditure.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 17. Headway Capital -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.headwaycapital.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/A6B1E1/1F2937?text=Headway+Capital" alt="Headway Capital Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Headway Capital</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Offers revolving business lines of credit for short-term working capital needs. They focus on businesses that need quick access to funds for inventory or seasonal swings.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 18. Biz2Credit -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://www.biz2credit.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/DC3545/FFFFFF?text=Biz2Credit" alt="Biz2Credit Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Biz2Credit</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                A technology-driven platform that matches borrowers to various lenders, including banks and alternative lenders. They use data to speed up the loan application and approval process.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 19. Funding Solutions -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.fundingsolutions.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/000000/FFFFFF?text=Funding+Solutions" alt="Funding Solutions Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Funding Solutions</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Focuses on traditional and commercial loans, including SBA products, for larger financing needs. They typically work with stable businesses seeking competitive rates for expansion.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 20. National Funding -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://www.nationalfunding.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/7F00FF/FFFFFF?text=National+Funding" alt="National Funding Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">National Funding</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Offers a variety of small business loans and equipment leasing options. They are a good choice for businesses needing quick decisions and flexible qualification criteria.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 21. Fora Financial -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-finance-blue h-full flex flex-col justify-between">
+                        <a href="https://www.forafinancial.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/9C27B0/FFFFFF?text=Fora+Financial" alt="Fora Financial Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Fora Financial</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Provides short-term working capital solutions and business cash advances. They are often focused on quick funding, making them suitable for time-sensitive opportunities.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 22. Currency -->
+                <div class="card group">
+                    <div class="block text-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-accent-green h-full flex flex-col justify-between">
+                        <a href="https://www.currencycap.com" target="_blank" rel="noopener noreferrer sponsored" class="block flex-grow hover:opacity-80 transition duration-300">
+                            <img src="https://placehold.co/300x80/00BCD4/1F2937?text=Currency" alt="Currency Logo" class="mx-auto h-12 w-auto object-cover rounded-lg mb-2">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Currency</h3>
+                            <p class="text-sm text-gray-600 leading-snug">
+                                Specializes in financing options for specific equipment, services, or large purchases. They integrate directly at the point of sale for vendors to offer financing to their customers.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <!-- Final CTA: The conversion point, links to primary site -->
+            <div class="mt-16 pt-10 border-t border-gray-300">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Find Your Best Funding Match in Minutes</h2>
+                <!-- Link to main site (passes link equity and drives conversion) -->
+                <a href="https://businessloanprofile.com/#apply" target="_blank" class="inline-flex px-12 py-4 border border-transparent text-xl font-bold rounded-xl text-white bg-finance-blue hover:bg-blue-800 transition duration-300 ease-in-out shadow-2xl transform hover:scale-105">
+                    Go to BusinessLoanProfile.com Application
+                </a>
+                <p class="mt-4 text-sm text-gray-500">This action directs you to the centralized application to connect with these partners.</p>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 mt-auto">
+        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <p class="mt-8 text-center text-base text-gray-500">
+                &copy; 2025 Business Loan Directory. A comprehensive resource for small business funding.
+            </p>
+            <p class="mt-2 text-center text-xs text-gray-600">
+                Disclaimer: This directory is independently managed and links directly to third-party funding partners.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

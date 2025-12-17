@@ -1,166 +1,260 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8"> 
+ <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Loan Profile & Funding Offers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Business Loan Profile &amp; Funding Offers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <style>
     /* --- CSS RESET & VARIABLES --- */
     :root {
+      /* Core Colors */
       --color-gray-900: #111827;
       --color-gray-600: #4b5563;
       --color-light-bg: #e5e7eb;
       --color-white: #ffffff;
+      
+      /* THEME: Warmer Green */
       --color-bg-warm: #ecfdf5;
+      
+      /* GRADIENTS: Green fading into White for Possibilities cards */
       --grad-card: linear-gradient(180deg, #34d399 0%, #ffffff 100%); 
+      
+      /* Layout & Shadows */
       --max-width: 1200px;
       --radius: 16px;
       --font-main: "Inter", sans-serif;
       --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
       --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-soft: 0 6px 18px rgba(17,24,39,0.07);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-main); background-color: var(--color-bg-warm); display: flex; flex-direction: column; min-height: 100vh; color: #1e293b; }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--color-bg-warm);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #1e293b;
+    }
+
+    /* --- UTILITIES --- */
     .container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
     .text-center { text-align: center; }
     .hidden { display: none; }
     
-    /* HERO / FORM STYLES */
+    /* --- 1. PHONE FORM STYLES --- */
     #talk-to-us { margin: 1.5rem 0; width: 100%; display: flex; justify-content: center; flex-shrink: 0; }
-    #phone-container { width: 100%; max-width: 600px; background-color: white; border-radius: 0 0 2.5rem 2.5rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); border: 4px solid #111827; margin: 0 auto; transition: max-width 0.4s ease-in-out; }
+    #phone-container {
+      width: 100%; max-width: 600px; background-color: white;
+      border-radius: 0 0 2.5rem 2.5rem; overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      /* Dark border representing phone bezel */
+      border: 6px solid #111827; 
+      margin: 0 auto; transition: max-width 0.4s ease-in-out;
+    }
     #phone-container.expanded { max-width: 600px; }
+    
     .notch { height: 1.5rem; background-color: #111827; display: flex; justify-content: center; align-items: center; }
     .notch-bar { width: 3rem; height: 0.5rem; background-color: #374151; border-radius: 9999px; }
     .scroll-area { height: 650px; overflow-y: auto; }
+    
     .header-content { background-color: #111827; padding: 3rem 1rem; color: white; text-align: center; }
-    .header-content h2 { font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .header-content h2 { font-size: 2.25rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 0.5rem; }
     .form-area { background-color: #e5e7eb; padding: 2rem; }
+    
     .form-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
     @media (min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } }
     .col-span-2 { grid-column: span 1; }
     @media (min-width: 640px) { .col-span-2 { grid-column: span 2; } }
     
+    /* INPUT STYLES */
     label { display: block; font-size: 0.75rem; font-weight: 500; margin-bottom: 0.25rem; color: #1f2937; }
-    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select { width: 100%; padding: 0.5rem; font-size: 0.875rem; border-radius: 0.25rem; border: 1px solid #000; background-color: white; color: #111827; }
-    input[type="file"] { width: 100%; padding: 0.5rem; font-size: 0.8rem; background: white; border: 1px dashed #4b5563; border-radius: 6px; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select {
+      width: 100%; padding: 0.5rem 0.5rem; font-size: 0.875rem; border-radius: 0.25rem;
+      border: 1px solid #9ca3af !important; box-shadow: none !important; background-color: white;
+      font-family: inherit; color: #111827;
+    }
+    input:focus, select:focus { outline: none; border-color: #111827 !important; }
     
-    input[type=range] { width: 100%; cursor: pointer; }
-    .slider-display { font-size: 2.25rem; font-weight: 800; color: #111827; }
-    .slider-labels { display: flex; justify-content: space-between; font-size: 0.75rem; color: #4b5563; }
+    /* FILE UPLOAD STYLE */
+    input[type="file"] {
+      width: 100%; padding: 0.5rem; font-size: 0.8rem; background: white;
+      border: 1px dashed #4b5563; border-radius: 6px; cursor: pointer;
+    }
+
+    /* SLIDER */
+    input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; cursor: pointer; }
+    input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; background: #d1d5db; border-radius: 0.5rem; }
+    input[type=range]::-webkit-slider-thumb { height: 24px; width: 24px; border-radius: 50%; background: #111827; cursor: pointer; -webkit-appearance: none; margin-top: -8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+    .slider-display { font-size: 2.25rem; font-weight: 800; color: #111827; letter-spacing: -0.025em; }
+    .slider-labels { display: flex; justify-content: space-between; font-size: 0.75rem; color: #4b5563; font-weight: 500; margin-top: 0.5rem; padding: 0 0.25rem; }
+    
+    /* CHECKBOX & BUTTON */
     .privacy-box { display: flex; align-items: flex-start; gap: 0.5rem; margin-top: 0.5rem; }
-    .btn-submit { width: 66%; max-width: 24rem; padding: 0.75rem; background-color: #1f2937; color: white; font-weight: 600; border-radius: 9999px; border: none; cursor: pointer; }
+    input[type="checkbox"] { margin-top: 0.25rem; height: 1rem; width: 1rem; border-radius: 0.25rem; border: 1px solid #9ca3af; }
+    
+    .btn-submit { width: 66%; max-width: 24rem; padding: 0.75rem 1.5rem; background-color: #1f2937; color: white; font-weight: 600; border-radius: 9999px; border: 1px solid #1f2937; cursor: pointer; transition: background-color 0.2s; }
+    .btn-submit:hover { background-color: #000000; }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
     .status-area { margin-top: 1.5rem; text-align: center; font-size: 0.875rem; font-weight: 500; }
     .text-success { color: #059669; }
     .text-gray { color: #4b5563; }
     .text-error { color: #dc2626; }
+
     .bottom-bar { height: 2rem; background-color: white; border-top: 1px solid #e5e7eb; display: flex; justify-content: center; align-items: center; }
     .bottom-pill { width: 4rem; height: 0.25rem; background-color: #d1d5db; border-radius: 9999px; }
 
-    /* POSSIBILITIES & OFFERS STYLES */
+    /* --- 2. POSSIBILITIES SECTION (Green Gradient Cards) --- */
     .sf-section { padding: 3rem 1.5rem 5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
     .sf-header { text-align: center; margin-bottom: 3rem; }
     .sf-header h2 { font-size: 2.5rem; color: #064e3b; margin-bottom: 1rem; }
     .sf-header p { font-size: 1.1rem; color: #4b5563; max-width: 800px; margin: 0 auto; }
+    
     .sf-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    .sf-feature-card { background: var(--grad-card); color: #064e3b; border-radius: var(--radius); padding: 2.5rem 2rem; box-shadow: var(--shadow-card); border: 1px solid #d1fae5; transition: transform 0.3s; }
-    .sf-feature-card:hover { transform: translateY(-5px); }
-    .sf-feature-card h3 { font-size: 1.4rem; margin-bottom: 1rem; font-weight: 800; color: #065f46; }
-    .sf-feature-card p { color: #1f2937; font-size: 1.05rem; }
-    
+
+    .sf-feature-card {
+      background: var(--grad-card); /* Green to White Gradient */
+      color: #064e3b; /* Dark text for readability */
+      border-radius: var(--radius); padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-card); transition: all 0.3s ease;
+      display: flex; flex-direction: column; align-items: flex-start;
+      border: 1px solid #d1fae5;
+    }
+    .sf-feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .sf-feature-card h3 { font-size: 1.4rem; margin-bottom: 1rem; font-weight: 800; color: #065f46; letter-spacing: -0.01em; }
+    .sf-feature-card p { color: #1f2937; font-size: 1.05rem; line-height: 1.5; font-weight: 500; }
+    .sf-feature-card strong { color: #047857; text-decoration: underline; text-decoration-color: rgba(4, 120, 87, 0.3); }
+
+    /* --- 3. TRUSTED LOGOS STYLES --- */
     .trusted-section { width: 100%; max-width: 1000px; margin: 0 auto 4rem auto; text-align: center; padding: 0 1rem; }
-    .trusted-title { font-size: 0.75rem; font-weight: 600; color: #6b7280; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .logo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-    .partner-logo { height: 2.5rem; opacity: 0.5; filter: grayscale(100%); transition: all 0.3s; }
-    .partner-logo:hover { opacity: 1; filter: grayscale(0); }
+    .trusted-title { font-size: 0.75rem; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+    .logo-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; }
+    .partner-logo { height: 2.5rem; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.5; transition: all 0.3s ease; }
+    .partner-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+
+    /* --- 4. LENDER OFFERS GRID STYLES --- */
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    .page-title { font-size: clamp(22px,4.6vw,36px); font-weight: 800; margin: 0 0 6px; text-align: center; color: #065f46; }
+    .subtitle { color: #4b5563; margin: 0 0 18px; text-align: center; }
+
+    .offers-grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+    @media(min-width:720px){ .offers-grid{ grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width:1100px){ .offers-grid{ grid-template-columns: repeat(3, 1fr); } }
     
-    .wrap { max-width: var(--max-width); margin: 0 auto; padding: 24px; }
-    .page-title { font-size: 2.5rem; font-weight: 800; text-align: center; color: #065f46; }
-    .subtitle { color: #4b5563; text-align: center; margin-bottom: 1rem; }
-    .offers-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-    .offer-card { background: white; border-radius: 12px; padding: 16px; border: 1px solid #e6e9eb; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 10px; transition: transform 0.2s; }
-    .offer-card:hover { transform: translateY(-5px); }
-    .offer-card h3 { font-size: 1.05rem; margin: 0; }
-    .tag { font-size: 0.75rem; font-weight: 700; color: #047857; background: #d1fae5; padding: 4px 8px; border-radius: 6px; }
-    .btn-learn-more { display: inline-block; padding: 8px 16px; background: #059669; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; margin-top: auto; text-align: center; }
+    .offer-card {
+      background: white; border-radius: 12px; padding: 16px;
+      border: 1px solid #e6e9eb; box-shadow: var(--shadow-card);
+      display: flex; flex-direction: column; gap: 10px; min-height: 170px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .offer-card:hover{ transform:translateY(-6px); box-shadow: var(--shadow-hover); }
+    .offer-card h3{ margin:0; font-size:1.05rem; line-height:1.2; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    
+    .tag { display:inline-block; font-size:0.75rem; font-weight:700; color: #047857; background: #d1fae5; padding:4px 8px; border-radius:6px; white-space:nowrap; }
+    .desc{ color:#374151; font-size:0.95rem; margin:6px 0 0; flex-grow:1; min-height:48px; }
+    .meta{ color: #6b7280; font-size:0.9rem; margin-top:6px; }
+    .rate{ font-weight:800; color: #10b981; font-size:0.98rem }
+    
+    .btn-wrap{ margin-top: auto; padding-top: 10px; }
+    .btn-learn-more{ display: inline-block; padding: 8px 16px; background: #059669; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: opacity .15s ease-in-out; }
+    .btn-learn-more:hover{ opacity: 0.9; }
+    
     footer { padding: 20px; text-align: center; color: #6b7280; font-size: 0.9rem; margin-top: 18px; }
   </style>
-</head>
-<body>
+
+
+
 
   <main style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; padding-top: 1.5rem;">
+    
     <div id="talk-to-us">
       <div id="phone-container">
         <div class="notch"><div class="notch-bar"></div></div>
         <div class="scroll-area">
           <div class="header-content">
-            <h2>BUSINESS LOAN PROFILE</h2>
-            <p>Trusted Partner in Funding</p>
+            <h2 style="margin:0;">BUSINESS LOAN PROFILE</h2>
+            <p style="margin-top:0.5rem;">Trusted Partner in Funding</p>
           </div>
+
           <div class="form-area">
             <div class="form-intro text-center" style="margin-bottom: 1.5rem;">
               <h3>RECEIVE FUNDING IN 24 HOURS</h3>
               <p>APPLYING WILL NOT AFFECT YOUR CREDIT SCORE.</p>
             </div>
 
-            <form id="lead-form" class="form-grid">
-              <div class="col-span-2">
-                <label>How much do you need? *</label>
-                <div class="text-center"><span id="sliderValueDisplay" class="slider-display">$50,000</span></div>
-                <input type="range" id="amountSlider" name="amountNeeded" min="5000" max="1000000" step="5000" value="50000">
-                <div class="slider-labels"><span>$5k</span><span>$1M+</span></div>
+            <form id="lead-form" method="post" class="form-grid">
+              <div class="col-span-2" style="margin-bottom: 0.5rem;">
+                <label for="amountSlider" style="margin-bottom: 0.5rem;">How much do you need? *</label>
+                <div class="text-center" style="margin-bottom: 0.75rem;">
+                  <span id="sliderValueDisplay" class="slider-display">$50,000</span>
+                </div>
+                <div style="padding: 0 0.25rem;">
+                  <input type="range" id="amountSlider" name="amountNeeded" min="5000" max="1000000" step="5000" value="50000">
+                </div>
+                <div class="slider-labels"><span>$5k</span><span>$500k</span><span>$1M+</span></div>
               </div>
 
-              <div><label>First Name *</label><input type="text" name="firstName" required></div>
-              <div><label>Last Name *</label><input type="text" name="lastName" required></div>
-              <div><label>Business Name *</label><input type="text" name="businessName" required></div>
-              <div><label>Email *</label><input type="email" name="email" required></div>
-              <div><label>Phone *</label><input type="tel" id="phone" name="phone" required placeholder="(555) 555-5555"></div>
-              
+              <div><label for="firstName">First Name *</label><input type="text" id="firstName" name="firstName" required="" autocomplete="given-name"></div>
+              <div><label for="lastName">Last Name *</label><input type="text" id="lastName" name="lastName" required="" autocomplete="family-name"></div>
+              <div><label for="businessName">Business Name *</label><input type="text" id="businessName" name="businessName" required=""></div>
+              <div><label for="email">Email *</label><input type="email" id="email" name="email" required="" autocomplete="email"></div>
+              <div><label for="phone">Phone number *</label><input type="tel" id="phone" name="phone" required="" inputmode="numeric" maxlength="10" placeholder="+1 (212) 644-5486"></div>
+
               <div>
-                <label>Age of Business *</label>
-                <select name="ageOfBusiness" required>
-                  <option value="" disabled selected>Select</option>
+                <label for="ageOfBusiness">Age of Business? *</label>
+                <select id="ageOfBusiness" name="ageOfBusiness" required="">
+                  <option value="" disabled="" selected="">Please Select</option>
                   <option value="0-6">0-6 Months</option>
                   <option value="7-12">7-12 Months</option>
-                  <option value="1-2">1-2 Years</option>
+                  <option value="1-2">1 - 2 Years</option>
                   <option value="2+">2+ Years</option>
                 </select>
               </div>
+
               <div>
-                <label>Monthly Revenue *</label>
-                <select name="avgRevenue" required>
-                  <option value="" disabled selected>Select</option>
-                  <option value="0-4999">$0 - $5k</option>
-                  <option value="5000-9999">$5k - $10k</option>
-                  <option value="10000+">$10k+</option>
+                <label for="avgRevenue">Avg. Monthly Revenue *</label>
+                <select id="avgRevenue" name="avgRevenue" required="">
+                  <option value="" disabled="" selected="">Please Select</option>
+                  <option value="0-4999">$0 - $4,999</option>
+                  <option value="5000-9999">$5,000 - $9,999</option>
+                  <option value="10000-24999">$10,000 - $24,999</option>
+                  <option value="25000-49999">$25,000 - $49,999</option>
+                  <option value="50000-100000">$50,000 - $100,000</option>
                 </select>
               </div>
+
               <div>
-                <label>Business Checking? *</label>
-                <select name="hasChecking" required>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
+                <label for="hasChecking">Do you have a Business Checking Account? *</label>
+                <select id="hasChecking" name="hasChecking" required="">
+                    <option value="" disabled="" selected="">Please Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
                 </select>
               </div>
+              
               <div>
-                <label>Need Immediately? *</label>
-                <select name="needImmediately" required>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
+                <label for="needImmediately">Immediately need the money? *</label>
+                <select id="needImmediately" name="needImmediately" required="">
+                    <option value="" disabled="" selected="">Please Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
                 </select>
               </div>
 
               <div class="col-span-2">
-                <label for="bankStatements">Upload Bank Statements (PDF)</label>
-                <input type="file" id="bankStatements" name="bankStatements" accept=".pdf" multiple>
-                <small style="color:#6b7280; font-size:0.7rem;">Max 3MB per file. Only PDF.</small>
+                <label for="bankStatements">Upload 3-4 Months Bank Statements (PDF)</label>
+                <input type="file" id="bankStatements" name="bankStatements" accept=".pdf" multiple="">
+                <small style="color:#6b7280; font-size:0.75rem;">Max file size: 3MB per file. Only PDF allowed.</small>
               </div>
 
               <div class="col-span-2 privacy-box">
-                <input type="checkbox" required>
-                <label style="font-size:0.75rem;">I agree to the Privacy Policy and Terms.</label>
+                <input id="agreePrivacy" name="agreePrivacy" type="checkbox" required="">
+                <label for="agreePrivacy" style="color: #374151; line-height: 1.3;">I agree to the Privacy Policy and Terms of Use regarding the collection and processing of my personal information.</label>
               </div>
 
               <div class="col-span-2 text-center" style="margin-top: 1rem;">
@@ -170,6 +264,7 @@
 
             <div class="status-area">
               <p id="status-message" class="text-gray"></p>
+              <p id="success-message" class="text-success hidden">Thank you! Your submission has been received. We'll be in touch soon.</p>
             </div>
           </div>
           <div class="bottom-bar"><div class="bottom-pill"></div></div>
@@ -177,11 +272,298 @@
       </div>
     </div>
 
-    </main>
+    <section class="sf-section">
+      <div class="sf-header">
+        <h2>Possibilities with SafeFundr</h2>
+        <p>Whether you run a retail store, construction firm, or startup, SafeFundr connects you with capital tailored to your specific situation.</p>
+      </div>
+
+      <div class="sf-card-grid">
+        <div class="sf-feature-card">
+          <h3>Same-Day Funding</h3>
+          <p>Need cash now? We offer advance cash funding that can be approved and deposited on the same day as your application.</p>
+        </div>
+        <div class="sf-feature-card">
+          <h3>Business Term Loans</h3>
+          <p>Traditional structure with modern speed. Get reliable capital to grow your operations with transparent terms.</p>
+        </div>
+        <div class="sf-feature-card">
+          <h3>Personal Term Loans</h3>
+          <p>Access personal funding options that carry fixed national bank rates, keeping your payments predictable.</p>
+        </div>
+        <div class="sf-feature-card">
+          <h3>100% Financing</h3>
+          <p>No Out Of Pocket Expense. No Down Payment. We ensure you get the full amount you need to operate.</p>
+        </div>
+        <div class="sf-feature-card">
+          <h3>No Upfront Fees</h3>
+          <p>We believe in transparency. There are absolutely no hidden upfront fees when you apply with us.</p>
+        </div>
+        <div class="sf-feature-card">
+          <h3>No Collateral</h3>
+          <p>Secure your funding without risking assets. We offer unsecured loans with <strong>No UCC filings</strong> required.</p>
+        </div>
+        <div class="sf-feature-card">
+          <h3>Flexible Terms</h3>
+          <p>Tailor your repayment. Choose from 5 or 7-year terms that are fully amortized to fit your cash flow.</p>
+        </div>
+        <div class="sf-feature-card">
+          <h3>Total Freedom</h3>
+          <p>No restrictions on industry or how you use the funds. You know your business best.</p>
+        </div>
+        <div class="sf-feature-card">
+          <h3>No Penalties</h3>
+          <p>Want to pay it off early? Go ahead. We charge zero prepayment penalties.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="trusted-section">
+      <p class="trusted-title">Trusted By Leading Lenders</p>
+      <div class="logo-grid">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Lexington-Capital-holdings.png" loading="lazy" alt="Lexington Capital Group" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Capfront-logo-1.png" loading="lazy" alt="CapFront" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/rapidfinance_logo.jpg" loading="lazy" alt="Rapid Finance" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Credibly-logo.png" loading="lazy" alt="Credibly" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/mnr_capital_group_logo.jpg" loading="lazy" alt="MNR Capital" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/everest_capital_office_logo.jpg" loading="lazy" alt="Everest Business Funding" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Preferred-funding-group-1.png" loading="lazy" alt="Preferred Funding Group" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Fora-financial-logo.png" loading="lazy" alt="Fora Financial" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Vox-logo-1.png" loading="lazy" alt="Vox Funding" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Kapitus-logo.png" loading="lazy" alt="Kapitus" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Kalamata-lgogo-1.png" loading="lazy" alt="Kalamata Capital Group" class="partner-logo">
+      </div>
+    </div>
+    
+    <div class="wrap">
+      <h1 class="page-title">Available Business Funding Offers</h1>
+      <p class="subtitle">Compare lending options — <strong>fintechs</strong> and <strong>alternative lenders.</strong></p>
+
+      <section class="offers-grid" id="offersGrid">
+        <article class="offer-card" data-lender="NewtekOne">
+            <h3>Newtek Small Business Finance <span class="tag">SBA &amp; Term Loans</span></h3>
+            <p class="desc">SBA 7(a), term loans, and flexible financing for established businesses with strong underwriting processes.</p>
+            <div class="meta">Typical amounts: <span class="rate">$25k–$5M</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/newtekone/" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="OnDeck">
+            <h3>OnDeck <span class="tag">Online Term Loan / Line of Credit</span></h3>
+            <p class="desc">Short-term working capital and term loans with fast approvals. Also offers a line of credit up to $200k.</p>
+            <div class="meta">Amounts: <span class="rate">Term Loans $6k–$500k; LOC up to $200k</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/analysis-ondeck-capital-strategic-review-2025-enova/" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="CAN Capital">
+            <h3>CAN Capital <span class="tag">Merchant Cash Advance</span></h3>
+            <p class="desc">Merchant cash advances and working capital for retail and service businesses.</p>
+            <div class="meta">Amounts: <span class="rate">$5k–$250k</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/comprehensive-strategic-assessment-can-capital-inc/" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Funding Circle">
+            <h3>Funding Circle <span class="tag">SMB Business Loans</span></h3>
+            <p class="desc">Online unsecured and secured term loans for growing small businesses with predictable repayment schedules.</p>
+            <div class="meta">Amounts: <span class="rate">£5k–£250k (UK-focused products)</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/funding-circle-2025-analysis-strategic-us-exit-uk-consolidation-and-return-to-profitability/" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Rapid Finance">
+            <h3>Rapid Finance <span class="tag">Term Loans &amp; Financing</span></h3>
+            <p class="desc">Fast decisioning and flexible term loan products aimed at scaling businesses.</p>
+            <div class="meta">Amounts: <span class="rate">$10k–$2M</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/rapid-finance-comprehehnsive-review/" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Credibly">
+            <h3>Credibly <span class="tag">Online Lender / Long-Term Loans</span></h3>
+            <p class="desc">Online alternative lender offering a range of financing, including long-term business loans up to $10M and working capital.</p>
+            <div class="meta">Amounts: <span class="rate">Working Capital up to $400k; Long-Term up to $10M</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/credibly-small-to-medium-sized-business-lending/" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Balboa Capital">
+            <h3>Balboa Capital <span class="tag">Equipment &amp; Working Capital</span></h3>
+            <p class="desc">Equipment financing (up to $500k) and small business loans (up to $250k) for small and mid-sized businesses.</p>
+            <div class="meta">Amounts: <span class="rate">$5k–$500k (varies by product)</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="CapFront">
+            <h3>CapFront <span class="tag">Term Loan / Working Capital</span></h3>
+            <p class="desc">Offers Expansion Term Loans up to $2M and Working Capital Loans up to $500k. Accepts newer businesses depending on cash flow.</p>
+            <div class="meta">Funding up to: <span class="rate">$2,000,000 (Term Loans)</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/capfront/" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Fora Financial">
+            <h3>Fora Financial <span class="tag">Short-Term Loans / MCA</span></h3>
+            <p class="desc">Quick access to capital for small businesses via short-term loans or revenue advances; max terms up to 24 months.</p>
+            <div class="meta">Loan size: <span class="rate">$5,000 – $1.5M</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/comprehensive-analysis-on-fora-financial/" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Everest Business Funding">
+            <h3>Everest Business Funding <span class="tag">Revenue-Based / MCA</span></h3>
+            <p class="desc">Offers working-capital advances based on business cash flow rather than strict credit requirements — useful for businesses needing fast cash.</p>
+            <div class="meta">Funding up to: <span class="rate">$2,000,000 (varies)</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Bitty Capital">
+            <h3>Bitty Capital <span class="tag">Alternative / Startup-Friendly</span></h3>
+            <p class="desc">Provides short-term financing (90–180 days) as a business cash advance, good for newer businesses with $5,000+ monthly revenue.</p>
+            <div class="meta">Funding up to: <span class="rate">$2,000 – $35,000</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="MNR Capital">
+            <h3>MNR Capital <span class="tag">MCA / Short-Term Loan</span></h3>
+            <p class="desc">Flexible financing, short-term working-capital loans and cash-flow based advances for small and medium businesses.</p>
+            <div class="meta">Funding range: <span class="rate">$10,000 – $300,000</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Lighter Capital">
+            <h3>Lighter Capital <span class="tag">Revenue-Based Financing (SaaS)</span></h3>
+            <p class="desc">Provides non-dilutive growth capital to SaaS and tech companies based on future revenues. Requires $200k+ Annual Recurring Revenue.</p>
+            <div class="meta">Typical funding: <span class="rate">Up to $4,000,000 (tranches)</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Kapitus">
+            <h3>Kapitus <span class="tag">Small Business Loans &amp; Financing</span></h3>
+            <p class="desc">Offers business loans (up to $5M), lines of credit, and revenue-based financing through an aggregated application process.</p>
+            <div class="meta">Funding: <span class="rate">Up to $5,000,000 (Business Loans)</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Idea Financial">
+            <h3>Idea Financial <span class="tag">Term Loans &amp; Lines</span></h3>
+            <p class="desc">Provides business term loans and lines of credit with fast applications and flexible repayment to support working capital and growth.</p>
+            <div class="meta">Financing up to several hundred thousand dollars (product-dependent).</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Vox Funding">
+            <h3>Vox Funding <span class="tag">Merchant &amp; Working Capital</span></h3>
+            <p class="desc">Merchant cash advances and working capital solutions that advance funds based on future receivables and business revenue.</p>
+            <div class="meta">Funding tailored to business sales &amp; receivables.</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Plexe">
+            <h3>Plexe <span class="tag">Revolving Credit / SMB</span></h3>
+            <p class="desc">Fintech offering revolving credit and working capital products for small and medium businesses with flexible repayments.</p>
+            <div class="meta">Credit limits typically vary by business.</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Headway Capital">
+            <h3>Headway Capital <span class="tag">Business Line of Credit</span></h3>
+            <p class="desc">Online business line of credit aimed at managing cash flow with fast funding. Loan amounts $5k to $100k.</p>
+            <div class="meta">Business credit line — <span class="rate">Up to $100,000</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Expansion Capital Group">
+            <h3>Expansion Capital Group <span class="tag">Working Capital Term Financing</span></h3>
+            <p class="desc">Short-term working-capital term products to help business owners grow and expand operations. Factor rates equivalent to 25–40%+ APR.</p>
+            <div class="meta">Product terms commonly run 3–12 months.</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Kalamata Capital Group">
+            <h3>Kalamata Capital Group <span class="tag">MCA &amp; Working Capital</span></h3>
+            <p class="desc">Merchant cash advance and working capital financing with fast turnaround for small and mid-sized businesses.</p>
+            <div class="meta">Funding based on revenue and sales.</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Mulligan Funding">
+            <h3>Mulligan Funding <span class="tag">Working Capital / Term Loans</span></h3>
+            <p class="desc">Business lender providing working capital and term loans with tailored terms and often rapid approvals.</p>
+            <div class="meta">Loan amounts up to multi-million levels depending on product.</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Specialty Capital">
+            <h3>Specialty Capital <span class="tag">Alternative Financing</span></h3>
+            <p class="desc">Provider of specialty financing solutions for businesses seeking tailored working capital and term products.</p>
+            <div class="meta">Terms vary by business and product.</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Samson Capital Group">
+            <h3>Samson Capital Group <span class="tag">Advisory / Capital</span></h3>
+            <p class="desc">Investment and capital advisory services; confirm product specifics with the provider.</p>
+            <div class="meta">Contact provider for exact products and eligibility.</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Edge (EdgeCL)">
+            <h3>Edge (EdgeCL) <span class="tag">Specialty / Asset-Based</span></h3>
+            <p class="desc">Specialty finance / asset-backed lending offering structured working capital and flexible credit facilities for established businesses.</p>
+            <div class="meta">Often structured and larger ticket financing.</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Forward Financing">
+            <h3>Forward Financing <span class="tag">Revenue-Based Financing</span></h3>
+            <p class="desc">Upfront capital in exchange for a percentage of future revenue; payments flex with business performance. Requires $10k+ monthly revenue.</p>
+            <div class="meta">Typical funding range: <span class="rate">$5k–$500k</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Pinnacle">
+            <h3>Pinnacle <span class="tag">Business Financing</span></h3>
+            <p class="desc">Alternative business financing services — confirm product details with the provider prior to publishing dependent rates/terms.</p>
+            <div class="meta">Varies by product and approval.</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Flexibility Capital">
+            <h3>Flexibility Capital <span class="tag">Loans &amp; Lines</span></h3>
+            <p class="desc">Offers business term loans (up to $5M), equipment financing (up to $3M), and lines of credit for SMBs with flexible terms.</p>
+            <div class="meta">Funding levels: <span class="rate">Up to $5,000,000 (Term Loans)</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="Funding Metrics">
+            <h3>Funding Metrics <span class="tag">Alternative Financing</span></h3>
+            <p class="desc">Business financing products and analytics-driven funding solutions — verify product pages for specific amounts and terms.</p>
+            <div class="meta">Varies</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="JRG Capital">
+            <h3>JRG Capital <span class="tag">Alternative Funding</span></h3>
+            <p class="desc">Offers alternative financing for businesses; check provider for exact product and eligibility details.</p>
+            <div class="meta">Varies</div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+
+        <article class="offer-card" data-lender="FinTap">
+            <h3>FinTap <span class="tag">Flexible SMB Financing</span></h3>
+            <p class="desc">Provides up to $750,000 in capital with rapid underwriting, looking beyond credit score for accessible capital.</p>
+            <div class="meta">Funding up to: <span class="rate">$750,000 (varies by product)</span></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+        </article>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="muted">Disclaimer: While we make every effort to ensure the accuracy of the information provided, all financial figures are estimates and may vary. Actual loan terms depend on your credit profile, business revenue, and other factors determined solely by the lender.</p>
+    </div>
+  </footer>
 
   <script>
     // --- CONFIGURATION ---
-    const GOOGLE_SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycby385Neucsh0b8zQhHsetpr1809Qw0fKn8vLMVBnm6saPcrJBKke7eXaZn3s5hdnHR76Q/exec";
+    const GOOGLE_SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzybmri3jbiv298u5BjVegA0eJPiByVBwQpeWTb8CsIICfonm499lRLrg8iWDHN7ayfeQ/exec
+";
 
     const leadForm = document.getElementById("lead-form");
     const statusMessage = document.getElementById("status-message");
@@ -190,6 +572,7 @@
     const slider = document.getElementById('amountSlider');
     const display = document.getElementById('sliderValueDisplay');
     const phoneInput = document.getElementById("phone");
+    const phoneContainer = document.getElementById("phone-container");
 
     // Slider
     slider.addEventListener('input', () => {
@@ -203,6 +586,22 @@
       if (digits.length > 10) digits = digits.slice(0, 10);
       phoneInput.value = digits;
     });
+    
+    // Expand phone container on focus
+    function handleFormInteraction(event) {
+      const isInput = event.target.tagName === "INPUT" || event.target.tagName === "SELECT";
+      if (event.type === "focusin" && isInput && event.target.type !== 'range') {
+        phoneContainer.classList.add("expanded");
+      } else if (event.type === "focusout") {
+        setTimeout(() => {
+          if (!leadForm.contains(document.activeElement)) {
+            phoneContainer.classList.remove("expanded");
+          }
+        }, 10);
+      }
+    }
+    leadForm.addEventListener("focusin", handleFormInteraction);
+    leadForm.addEventListener("focusout", handleFormInteraction);
 
     // File to Base64
     const fileToBase64 = (file) => {
@@ -221,7 +620,7 @@
     // Submit Logic
     leadForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-      statusMessage.textContent = "Processing...";
+      statusMessage.textContent = "Processing secure application...";
       statusMessage.className = "text-gray";
       submitButton.disabled = true;
       submitButton.style.opacity = "0.6";
@@ -251,7 +650,6 @@
           body: JSON.stringify(dataObj)
         });
 
-        // Get the actual text response from the server to debug
         const resultText = await response.text(); 
         
         if (resultText.includes("Error")) {
@@ -262,6 +660,11 @@
         statusMessage.className = "text-success";
         leadForm.reset();
         
+        // Reset slider
+        slider.value = 50000;
+        display.textContent = "$50,000";
+        
+        phoneContainer.classList.remove("expanded");
       } catch (error) {
         console.error(error);
         statusMessage.textContent = "Error: " + error.message;
@@ -272,5 +675,6 @@
       }
     });
   </script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>

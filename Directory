@@ -9,17 +9,18 @@
   <style>
     /* --- CSS RESET & VARIABLES --- */
     :root {
-      /* Core Colors */
-      --color-gray-900: #111827;
-      --color-gray-600: #4b5563;
-      --color-light-bg: #e5e7eb;
-      --color-white: #ffffff;
+  /* ... other variables ... */
+  
+  /* UPDATED: White Dominant fading to Mint Green (Matches Button) */
+  --grad-card: linear-gradient(180deg, #ffffff 30%, #d1fae5 100%);
+  
+  /* ... other variables ... */
+}
       
       /* THEME: Warmer Green */
       --color-bg-warm: #ecfdf5;
-      
       /* GRADIENTS: Green fading into White for Possibilities cards */
-      --grad-card: linear-gradient(180deg, #34d399 0%, #ffffff 100%); 
+      --grad-card: linear-gradient(180deg, #34d399 0%, #ffffff 100%);
       
       /* Layout & Shadows */
       --max-width: 1200px;
@@ -49,12 +50,14 @@
     /* --- 1. PHONE FORM STYLES --- */
     #talk-to-us { margin: 1.5rem 0; width: 100%; display: flex; justify-content: center; flex-shrink: 0; }
     #phone-container {
-      width: 100%; max-width: 600px; background-color: white;
+      width: 100%;
+      max-width: 600px; background-color: white;
       border-radius: 0 0 2.5rem 2.5rem; overflow: hidden;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
       /* Dark border representing phone bezel */
       border: 6px solid #111827; 
-      margin: 0 auto; transition: max-width 0.4s ease-in-out;
+      margin: 0 auto;
+      transition: max-width 0.4s ease-in-out;
     }
     #phone-container.expanded { max-width: 600px; }
     
@@ -74,15 +77,18 @@
     /* INPUT STYLES */
     label { display: block; font-size: 0.75rem; font-weight: 500; margin-bottom: 0.25rem; color: #1f2937; }
     input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select {
-      width: 100%; padding: 0.5rem 0.5rem; font-size: 0.875rem; border-radius: 0.25rem;
+      width: 100%;
+      padding: 0.5rem 0.5rem; font-size: 0.875rem; border-radius: 0.25rem;
       border: 1px solid #9ca3af !important; box-shadow: none !important; background-color: white;
-      font-family: inherit; color: #111827;
+      font-family: inherit;
+      color: #111827;
     }
     input:focus, select:focus { outline: none; border-color: #111827 !important; }
     
     /* FILE UPLOAD STYLE */
     input[type="file"] {
-      width: 100%; padding: 0.5rem; font-size: 0.8rem; background: white;
+      width: 100%;
+      padding: 0.5rem; font-size: 0.8rem; background: white;
       border: 1px dashed #4b5563; border-radius: 6px; cursor: pointer;
     }
 
@@ -109,26 +115,96 @@
     .bottom-bar { height: 2rem; background-color: white; border-top: 1px solid #e5e7eb; display: flex; justify-content: center; align-items: center; }
     .bottom-pill { width: 4rem; height: 0.25rem; background-color: #d1d5db; border-radius: 9999px; }
 
-    /* --- 2. POSSIBILITIES SECTION (Green Gradient Cards) --- */
-    .sf-section { padding: 3rem 1.5rem 5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
-    .sf-header { text-align: center; margin-bottom: 3rem; }
-    .sf-header h2 { font-size: 2.5rem; color: #064e3b; margin-bottom: 1rem; }
-    .sf-header p { font-size: 1.1rem; color: #4b5563; max-width: 800px; margin: 0 auto; }
-    
-    .sf-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    /* --- 2. POSSIBILITIES SECTION (Fixed: Tight & Right-Aligned) --- */
+.sf-section {
+  padding: 3rem 1.5rem 5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .sf-feature-card {
-      background: var(--grad-card); /* Green to White Gradient */
-      color: #064e3b; /* Dark text for readability */
-      border-radius: var(--radius); padding: 2.5rem 2rem;
-      box-shadow: var(--shadow-card); transition: all 0.3s ease;
-      display: flex; flex-direction: column; align-items: flex-start;
-      border: 1px solid #d1fae5;
-    }
-    .sf-feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-    .sf-feature-card h3 { font-size: 1.4rem; margin-bottom: 1rem; font-weight: 800; color: #065f46; letter-spacing: -0.01em; }
-    .sf-feature-card p { color: #1f2937; font-size: 1.05rem; line-height: 1.5; font-weight: 500; }
-    .sf-feature-card strong { color: #047857; text-decoration: underline; text-decoration-color: rgba(4, 120, 87, 0.3); }
+.sf-header {
+  text-align: center;
+  margin-bottom: 2rem; /* Reduced from 3rem */
+}
+
+/* THE GRID: Tight spacing */
+.sf-card-grid {
+  display: grid;
+  /* Smaller column minimum (250px) allows for tighter packing */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem; /* TIGHT GAP (was 1.5rem) */
+  align-items: center; /* Vertically centers the arrow relative to row */
+}
+
+/* THE CARDS: Compact padding */
+.sf-feature-card {
+  background: var(--grad-card);
+  border: 1px solid #6ee7b7;
+  color: #064e3b;
+  border-radius: 12px;
+  
+  /* COMPACT PADDING */
+  padding: 1.5rem; /* Reduced from 2.5rem */
+  
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%; /* Ensures all cards in a row match height */
+}
+
+.sf-feature-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.sf-feature-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* --- THE ARROW LINK (Right Edge) --- */
+.sf-arrow-link {
+  grid-column: span 1;
+  
+  /* ALIGNMENT: Pushes to the far RIGHT edge */
+  justify-self: end; 
+  align-self: center;
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+  padding: 0;
+  /* Push it away from the card next to it */
+  margin-left: auto; 
+  
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.sf-arrow-link:hover {
+  transform: translateX(5px);
+}
+
+.sf-chevron-shape {
+  width: 50px; /* Compact Size */
+  height: auto;
+  fill: url(#corporateGreen);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* Mobile: Full width row, aligned right */
+@media (max-width: 768px) {
+  .sf-arrow-link {
+    width: 100%; 
+    padding: 1rem 0;
+    padding-right: 0.5rem;
+    justify-self: end;
+  }
+}
 
     /* --- 3. TRUSTED LOGOS STYLES --- */
     .trusted-section { width: 100%; max-width: 1000px; margin: 0 auto 4rem auto; text-align: center; padding: 0 1rem; }
@@ -136,6 +212,228 @@
     .logo-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; }
     .partner-logo { height: 2.5rem; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.5; transition: all 0.3s ease; }
     .partner-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+
+    /* --- NEW: MAIN CTA & CIRCULAR BADGE --- */
+    .sf-cta-wrapper {
+        text-align: center;
+        margin-top: 4rem;
+        position: relative;
+        display: inline-block; /* Essential for the badge positioning */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* "BIMI" Style Circular Badge (Restored) */
+    .sf-popular-badge {
+        position: absolute;
+        top: -25px; /* Moves it up to sit on the edge */
+        right: -15px; /* Moves it to the right corner */
+        width: 65px;
+        height: 65px;
+        background-color: #111827; /* Dark Navy */
+        color: #fbbf24; /* Gold Text */
+        border-radius: 50%; /* Makes it a perfect circle */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.65rem;
+        font-weight: 800;
+        line-height: 1.1;
+        text-transform: uppercase;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        z-index: 10;
+        border: 2px solid white; /* Crisp white edge */
+        transform: rotate(15deg); /* Jaunty angle */
+    }
+
+    /* --- NEW: MAIN CTA & CIRCULAR BADGE --- */
+    .sf-cta-wrapper {
+        text-align: center;
+        margin-top: 4rem;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* --- CTA WRAPPER --- */
+    .sf-cta-wrapper {
+        text-align: center;
+        margin-top: 4rem;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* "Scalloped Seal" Badge (BIMI Shape) */
+    .sf-popular-badge {
+        position: absolute;
+        top: -25px;
+        right: -20px;
+        width: 55px;
+        height: 55px;
+        
+        background-color: #111827; /* Dark Navy */
+        color: #fbbf24; /* Gold Text */
+        
+        /* This creates the multi-point "Seal/Scallop" shape */
+        clip-path: polygon(
+            50% 0%, 63% 10%, 79% 5%, 85% 20%, 98% 23%, 95% 39%, 
+            100% 55%, 92% 68%, 93% 85%, 78% 88%, 68% 100%, 50% 90%, 
+            32% 100%, 22% 88%, 7% 85%, 8% 68%, 0% 55%, 5% 39%, 
+            2% 23%, 15% 20%, 21% 5%, 37% 10%
+        );
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+        font-size: 0.55rem;
+        font-weight: 900;
+        line-height: 1;
+        text-transform: uppercase;
+        
+        z-index: 10;
+        transform: rotate(15deg); /* Jaunty angle */
+        filter: drop-shadow(0 4px 3px rgba(0,0,0,0.3)); /* Shadow for shape */
+    }
+
+    /* --- WRAPPER --- */
+    .sf-cta-wrapper {
+        text-align: center;
+        margin-top: 4rem;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* --- WRAPPER --- */
+    .sf-cta-wrapper {
+        text-align: center;
+        margin-top: 4rem;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* --- THE PERFECT SEAL BADGE (SVG Background) --- */
+    .sf-popular-badge {
+        position: absolute;
+        top: -28px;  /* Adjusts how high it floats */
+        right: -22px; /* Adjusts how far right it hangs */
+        width: 65px;
+        height: 65px;
+        
+        /* This encodes the "Seal" shape directly into the CSS */
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23111827' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C12.6 2 13.2 2.2 13.6 2.6L14.8 3.7C15.2 4.1 15.8 4.3 16.4 4.3H18C18.6 4.3 19 4.7 19.1 5.3L19.3 6.9C19.4 7.5 19.7 8 20.1 8.4L21.3 9.5C21.7 9.9 21.8 10.5 21.5 11L20.8 12.5C20.5 13 20.5 13.6 20.8 14.1L21.5 15.6C21.8 16.1 21.7 16.7 21.3 17.1L20.1 18.2C19.7 18.6 19.4 19.1 19.3 19.7L19.1 21.3C19 21.9 18.6 22.3 18 22.3H16.4C15.8 22.3 15.2 22.5 14.8 22.9L13.6 24C13.2 24.4 12.6 24.6 12 24.6C11.4 24.6 10.8 24.4 10.4 24L9.2 22.9C8.8 22.5 8.2 22.3 7.6 22.3H6C5.4 22.3 5 21.9 4.9 21.3L4.7 19.7C4.6 19.1 4.3 18.6 3.9 18.2L2.7 17.1C2.3 16.7 2.2 16.1 2.5 15.6L3.2 14.1C3.5 13.6 3.5 13 3.2 12.5L2.5 11C2.2 10.5 2.3 9.9 2.7 9.5L3.9 8.4C4.3 8 4.6 7.5 4.7 6.9L4.9 5.3C5 4.7 5.4 4.3 6 4.3H7.6C8.2 4.3 8.8 4.1 9.2 3.7L10.4 2.6C10.8 2.2 11.4 2 12 2Z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+        /* Text Styles */
+        color: #fbbf24; /* Gold */
+        font-size: 0.55rem;
+        font-weight: 900;
+        line-height: 1;
+        text-transform: uppercase;
+        
+        z-index: 10;
+        transform: rotate(15deg); 
+        filter: drop-shadow(0 4px 3px rgba(0,0,0,0.3));
+    }
+
+    /* --- WRAPPER --- */
+    .sf-cta-wrapper {
+        text-align: center;
+        margin-top: 4rem;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* --- CONTAINER FOR BADGE --- */
+    .sf-badge-container {
+        position: absolute;
+        /* Positioning: Hangs off the top-right corner */
+        top: -20px;
+        right: -15px;
+        
+        /* LOCKED SIZE: This prevents it from getting "bigger" */
+        width: 45px;
+        height: 45px;
+        
+        z-index: 10;
+        transform: rotate(15deg); /* Jaunty angle */
+        filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+        
+        /* Flexbox to center the text over the SVG */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* The SVG Seal Shape */
+    .sf-badge-container svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        fill: #111827; /* Dark Navy Color */
+    }
+
+    /* The Text on top of the Seal */
+    .sf-badge-text {
+        position: relative; /* Sits on top of SVG */
+        z-index: 2;
+        color: #fbbf24; /* Gold Text */
+        font-size: 0.45rem; /* Small, crisp font */
+        font-weight: 900;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    /* --- BUTTON STYLES (White-Dominant Green) --- */
+    .sf-main-btn {
+        background: linear-gradient(180deg, #ffffff 30%, #d1fae5 100%);
+        color: #065f46; /* Dark Emerald Text */
+        text-decoration: none;
+        
+        padding: 0.85rem 2.5rem; 
+        font-size: 0.9rem; 
+        font-weight: 800;
+        
+        border-radius: 12px;
+        border: 1px solid #6ee7b7; 
+        box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.15);
+        
+        transition: all 0.3s ease;
+        display: inline-block;
+        max-width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .sf-main-btn:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(180deg, #f0fdf4 0%, #6ee7b7 100%);
+        box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.25);
+        border-color: #34d399;
+    }
 
     /* --- 4. LENDER OFFERS GRID STYLES --- */
     .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
@@ -164,7 +462,52 @@
     .btn-learn-more{ display: inline-block; padding: 8px 16px; background: #059669; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: opacity .15s ease-in-out; }
     .btn-learn-more:hover{ opacity: 0.9; }
     
-    footer { padding: 20px; text-align: center; color: #6b7280; font-size: 0.9rem; margin-top: 18px; }
+    
+
+  /* --- COMPACT & RESPONSIVE CHEVRON --- */
+.sf-arrow-link {
+  /* Grid Placement */
+  grid-column: span 1;
+  
+  /* Flexbox to center the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Base Sizing - Smaller & Compact */
+  min-height: 120px; /* Much smaller than the previous 200px */
+  padding: 1rem;
+  
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Hover Effect: Quick shift right */
+.sf-arrow-link:hover {
+  transform: translateX(5px);
+}
+
+/* The Icon Size */
+.sf-chevron-shape {
+  width: 50px; /* Clean, small corporate size */
+  height: auto;
+  fill: url(#corporateGreen); /* Uses the gradient defined in HTML */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* Subtle depth */
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+  .sf-arrow-link {
+    min-height: 80px; /* Very compact on phone */
+    justify-content: flex-end; /* Aligns arrow to the right on mobile */
+    padding-right: 2rem;
+  }
+  .sf-chevron-shape {
+    width: 40px; /* Even smaller on mobile */
+  }
+}
+  
   </style>
 
 
@@ -203,7 +546,7 @@
               <div><label for="lastName">Last Name *</label><input type="text" id="lastName" name="lastName" required="" autocomplete="family-name"></div>
               <div><label for="businessName">Business Name *</label><input type="text" id="businessName" name="businessName" required=""></div>
               <div><label for="email">Email *</label><input type="email" id="email" name="email" required="" autocomplete="email"></div>
-              <div><label for="phone">Phone number *</label><input type="tel" id="phone" name="phone" required="" inputmode="numeric" maxlength="10" placeholder="+1 (212) 644-5486"></div>
+              <div><label for="phone">Phone number *</label><input type="tel" id="phone" name="phone" required="" inputmode="numeric" maxlength="10" placeholder="2126445486"></div>
 
               <div>
                 <label for="ageOfBusiness">Age of Business? *</label>
@@ -249,7 +592,7 @@
               <div class="col-span-2">
                 <label for="bankStatements">Upload 3-4 Months Bank Statements (PDF)</label>
                 <input type="file" id="bankStatements" name="bankStatements" accept=".pdf" multiple="">
-                <small style="color:#6b7280; font-size:0.75rem;">Max file size: 3MB per file. Only PDF allowed.</small>
+                <small style="color:#6b7280; font-size:0.75rem;">Max file size: 10MB per file. Only PDF allowed.</small>
               </div>
 
               <div class="col-span-2 privacy-box">
@@ -272,17 +615,37 @@
       </div>
     </div>
 
+
+
+    <div class="trusted-section">
+      <p class="trusted-title">Trusted By Leading Lenders</p>
+      <div class="logo-grid">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/lexcapital-1920w-1.png" loading="lazy" alt="Lexington Capital Group" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Capfront-logo-1.png" loading="lazy" alt="CapFront" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Rapid-Finance-Official-logo.png" loading="lazy" alt="Rapid Finance" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Credibly-official-logo-1.png" loading="lazy" alt="Credibly" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/MNR-Capital-official-logo.png" loading="lazy" alt="MNR Capital" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/everest_capital_office_logo-1.png" loading="lazy" alt="Everest Business Funding" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Preferred-funding-group-1.png" loading="lazy" alt="Preferred Funding Group" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Fora-official-logo-1.png" loading="lazy" alt="Fora Financial" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Vox-logo-1.png" loading="lazy" alt="Vox Funding" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Kapitus-official-logo-1.png" loading="lazy" alt="Kapitus" class="partner-logo">
+        <img src="https://safefundr.com/wp-content/uploads/2025/12/Kalamata-lgogo-1.png" loading="lazy" alt="Kalamata Capital Group" class="partner-logo">
+      </div>
+    </div>
+
+
+    <div class="sf-divider"></div>
+
+
     <section class="sf-section">
       <div class="sf-header">
-        <h2>Possibilities with SafeFundr</h2>
-        <p>Whether you run a retail store, construction firm, or startup, SafeFundr connects you with capital tailored to your specific situation.</p>
+        <h1>Built to Help Business Owners</h1>
+        <p><strong>Whether you run a retail store, construction firm, or any industry, SafeFundr connects you with capital tailored to your specific situation.</strong></p>
       </div>
 
       <div class="sf-card-grid">
-        <div class="sf-feature-card">
-          <h3>Same-Day Funding</h3>
-          <p>Need cash now? We offer advance cash funding that can be approved and deposited on the same day as your application.</p>
-        </div>
+        
         <div class="sf-feature-card">
           <h3>Business Term Loans</h3>
           <p>Traditional structure with modern speed. Get reliable capital to grow your operations with transparent terms.</p>
@@ -315,29 +678,29 @@
           <h3>No Penalties</h3>
           <p>Want to pay it off early? Go ahead. We charge zero prepayment penalties.</p>
         </div>
-      </div>
-    </section>
 
-    <div class="trusted-section">
-      <p class="trusted-title">Trusted By Leading Lenders</p>
-      <div class="logo-grid">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/Lexington-Capital-holdings.png" loading="lazy" alt="Lexington Capital Group" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/Capfront-logo-1.png" loading="lazy" alt="CapFront" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/rapidfinance_logo.jpg" loading="lazy" alt="Rapid Finance" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/Credibly-logo.png" loading="lazy" alt="Credibly" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/mnr_capital_group_logo.jpg" loading="lazy" alt="MNR Capital" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/everest_capital_office_logo.jpg" loading="lazy" alt="Everest Business Funding" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/Preferred-funding-group-1.png" loading="lazy" alt="Preferred Funding Group" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/Fora-financial-logo.png" loading="lazy" alt="Fora Financial" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/Vox-logo-1.png" loading="lazy" alt="Vox Funding" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/Kapitus-logo.png" loading="lazy" alt="Kapitus" class="partner-logo">
-        <img src="https://safefundr.com/wp-content/uploads/2025/12/Kalamata-lgogo-1.png" loading="lazy" alt="Kalamata Capital Group" class="partner-logo">
-      </div>
-    </div>
+        <a href="program" class="sf-arrow-link" aria-label="View Program">
+          <svg class="sf-chevron-shape" viewBox="0 0 44 40" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="corporateGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#065f46; stop-opacity:1"></stop> 
+                <stop offset="100%" style="stop-color:#10b981; stop-opacity:1"></stop> 
+              </linearGradient>
+            </defs>
+            
+            <path d="M12 0 L8 0 L20 20 L8 40 L12 40 L26 20 Z" opacity="0.6"></path>
+            <path d="M24 0 L20 0 L32 20 L20 40 L24 40 L38 20 Z"></path>
+          </svg>
+        </a>
+
+        </div>
     
+        <div class="sf-divider"></div>
+
+    <section class="sf-section">
     <div class="wrap">
-      <h1 class="page-title">Available Business Funding Offers</h1>
-      <p class="subtitle">Compare lending options — <strong>fintechs</strong> and <strong>alternative lenders.</strong></p>
+      <h1 class="page-title">Compare lending options — <strong>fintechs</strong> and <strong>alternative lenders.</strong><p></p></h1>
+      
 
       <section class="offers-grid" id="offersGrid">
         <article class="offer-card" data-lender="NewtekOne">
@@ -382,13 +745,6 @@
             <div class="btn-wrap"><a href="https://safefundr.com/credibly-small-to-medium-sized-business-lending/" class="btn-learn-more">Learn More</a></div>
         </article>
 
-        <article class="offer-card" data-lender="Balboa Capital">
-            <h3>Balboa Capital <span class="tag">Equipment &amp; Working Capital</span></h3>
-            <p class="desc">Equipment financing (up to $500k) and small business loans (up to $250k) for small and mid-sized businesses.</p>
-            <div class="meta">Amounts: <span class="rate">$5k–$500k (varies by product)</span></div>
-            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
-        </article>
-
         <article class="offer-card" data-lender="CapFront">
             <h3>CapFront <span class="tag">Term Loan / Working Capital</span></h3>
             <p class="desc">Offers Expansion Term Loans up to $2M and Working Capital Loans up to $500k. Accepts newer businesses depending on cash flow.</p>
@@ -407,21 +763,21 @@
             <h3>Everest Business Funding <span class="tag">Revenue-Based / MCA</span></h3>
             <p class="desc">Offers working-capital advances based on business cash flow rather than strict credit requirements — useful for businesses needing fast cash.</p>
             <div class="meta">Funding up to: <span class="rate">$2,000,000 (varies)</span></div>
-            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/everestbusinessfunding-honest-review/" class="btn-learn-more">Learn More</a></div>
         </article>
 
         <article class="offer-card" data-lender="Bitty Capital">
             <h3>Bitty Capital <span class="tag">Alternative / Startup-Friendly</span></h3>
             <p class="desc">Provides short-term financing (90–180 days) as a business cash advance, good for newer businesses with $5,000+ monthly revenue.</p>
             <div class="meta">Funding up to: <span class="rate">$2,000 – $35,000</span></div>
-            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/bitty-advance-comprehensive-reviews/" class="btn-learn-more">Learn More</a></div>
         </article>
 
         <article class="offer-card" data-lender="MNR Capital">
             <h3>MNR Capital <span class="tag">MCA / Short-Term Loan</span></h3>
             <p class="desc">Flexible financing, short-term working-capital loans and cash-flow based advances for small and medium businesses.</p>
             <div class="meta">Funding range: <span class="rate">$10,000 – $300,000</span></div>
-            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/everything-you-need-to-know-about-mnr-capital/" class="btn-learn-more">Learn More</a></div>
         </article>
 
         <article class="offer-card" data-lender="Lighter Capital">
@@ -435,28 +791,21 @@
             <h3>Kapitus <span class="tag">Small Business Loans &amp; Financing</span></h3>
             <p class="desc">Offers business loans (up to $5M), lines of credit, and revenue-based financing through an aggregated application process.</p>
             <div class="meta">Funding: <span class="rate">Up to $5,000,000 (Business Loans)</span></div>
-            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/kapitus-borrower-guide/" class="btn-learn-more">Learn More</a></div>
         </article>
 
         <article class="offer-card" data-lender="Idea Financial">
             <h3>Idea Financial <span class="tag">Term Loans &amp; Lines</span></h3>
             <p class="desc">Provides business term loans and lines of credit with fast applications and flexible repayment to support working capital and growth.</p>
             <div class="meta">Financing up to several hundred thousand dollars (product-dependent).</div>
-            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/idea-vs-vox-funding-comparison/" class="btn-learn-more">Learn More</a></div>
         </article>
 
         <article class="offer-card" data-lender="Vox Funding">
             <h3>Vox Funding <span class="tag">Merchant &amp; Working Capital</span></h3>
             <p class="desc">Merchant cash advances and working capital solutions that advance funds based on future receivables and business revenue.</p>
             <div class="meta">Funding tailored to business sales &amp; receivables.</div>
-            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
-        </article>
-
-        <article class="offer-card" data-lender="Plexe">
-            <h3>Plexe <span class="tag">Revolving Credit / SMB</span></h3>
-            <p class="desc">Fintech offering revolving credit and working capital products for small and medium businesses with flexible repayments.</p>
-            <div class="meta">Credit limits typically vary by business.</div>
-            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
+            <div class="btn-wrap"><a href="https://safefundr.com/idea-vs-vox-funding-comparison/" class="btn-learn-more">Learn More</a></div>
         </article>
 
         <article class="offer-card" data-lender="Headway Capital">
@@ -542,139 +891,156 @@
             <div class="meta">Varies</div>
             <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
         </article>
-
-        <article class="offer-card" data-lender="FinTap">
-            <h3>FinTap <span class="tag">Flexible SMB Financing</span></h3>
-            <p class="desc">Provides up to $750,000 in capital with rapid underwriting, looking beyond credit score for accessible capital.</p>
-            <div class="meta">Funding up to: <span class="rate">$750,000 (varies by product)</span></div>
-            <div class="btn-wrap"><a href="https://safefundr.com/Product" class="btn-learn-more">Learn More</a></div>
-        </article>
       </section>
     </div>
 
-  </main>
+  </section></section></main>
 
-  <footer>
-    <div class="wrap">
-      <p class="muted">Disclaimer: While we make every effort to ensure the accuracy of the information provided, all financial figures are estimates and may vary. Actual loan terms depend on your credit profile, business revenue, and other factors determined solely by the lender.</p>
-    </div>
-  </footer>
+  
 
-  <script>
-    // --- CONFIGURATION ---
-    const GOOGLE_SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzybmri3jbiv298u5BjVegA0eJPiByVBwQpeWTb8CsIICfonm499lRLrg8iWDHN7ayfeQ/exec
-";
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+  import { getStorage, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-    const leadForm = document.getElementById("lead-form");
-    const statusMessage = document.getElementById("status-message");
-    const submitButton = document.getElementById("submit-button");
-    const fileInput = document.getElementById('bankStatements');
-    const slider = document.getElementById('amountSlider');
-    const display = document.getElementById('sliderValueDisplay');
-    const phoneInput = document.getElementById("phone");
-    const phoneContainer = document.getElementById("phone-container");
+  // --- CONFIGURATION ---
+  // PASTE YOUR FIREBASE CONFIG HERE (The one you copied earlier)
+const firebaseConfig = {
+  apiKey: "AIzaSyCE8v3hv0Smt57HWY62q8wXuGB0jf0rnTE",
+  authDomain: "safefundr-v2.firebaseapp.com",
+  projectId: "safefundr-v2",
+  storageBucket: "safefundr-v2.firebasestorage.app",
+  messagingSenderId: "727467428238",
+  appId: "1:727467428238:web:88ed8674f60752e3b7fcdf"
+};
 
-    // Slider
-    slider.addEventListener('input', () => {
-       let val = parseInt(slider.value);
-       display.textContent = val >= 1000000 ? "$1,000,000+" : "$" + val.toLocaleString();
-    });
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const storage = getStorage(app);
 
-    // Phone Format
-    phoneInput.addEventListener("input", () => {
-      let digits = phoneInput.value.replace(/\D/g, "");
-      if (digits.length > 10) digits = digits.slice(0, 10);
-      phoneInput.value = digits;
-    });
-    
-    // Expand phone container on focus
-    function handleFormInteraction(event) {
-      const isInput = event.target.tagName === "INPUT" || event.target.tagName === "SELECT";
-      if (event.type === "focusin" && isInput && event.target.type !== 'range') {
-        phoneContainer.classList.add("expanded");
-      } else if (event.type === "focusout") {
-        setTimeout(() => {
-          if (!leadForm.contains(document.activeElement)) {
-            phoneContainer.classList.remove("expanded");
-          }
-        }, 10);
-      }
+  // --- UI References ---
+  const leadForm = document.getElementById("lead-form");
+  const statusMessage = document.getElementById("status-message");
+  const successMessage = document.getElementById("success-message");
+  const submitButton = document.getElementById("submit-button");
+  const fileInput = document.getElementById('bankStatements');
+  const slider = document.getElementById('amountSlider');
+  const display = document.getElementById('sliderValueDisplay');
+  const phoneInput = document.getElementById("phone");
+  const phoneContainer = document.getElementById("phone-container");
+
+  // --- UI Interactions ---
+  slider.addEventListener('input', () => {
+     let val = parseInt(slider.value);
+     display.textContent = val >= 1000000 ? "$1,000,000+" : "$" + val.toLocaleString();
+  });
+
+  phoneInput.addEventListener("input", () => {
+    let digits = phoneInput.value.replace(/\D/g, "");
+    if (digits.length > 10) digits = digits.slice(0, 10);
+    phoneInput.value = digits;
+  });
+
+  function handleFormInteraction(event) {
+    const isInput = event.target.tagName === "INPUT" || event.target.tagName === "SELECT";
+    if (event.type === "focusin" && isInput && event.target.type !== 'range') {
+      phoneContainer.classList.add("expanded");
+    } else if (event.type === "focusout") {
+      setTimeout(() => {
+        if (!leadForm.contains(document.activeElement)) {
+          phoneContainer.classList.remove("expanded");
+        }
+      }, 10);
     }
-    leadForm.addEventListener("focusin", handleFormInteraction);
-    leadForm.addEventListener("focusout", handleFormInteraction);
+  }
+  leadForm.addEventListener("focusin", handleFormInteraction);
+  leadForm.addEventListener("focusout", handleFormInteraction);
 
-    // File to Base64
-    const fileToBase64 = (file) => {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve({
-          name: file.name,
-          type: file.type,
-          data: reader.result.split(',')[1]
-        });
-        reader.onerror = error => reject(error);
-      });
-    };
+  // --- SUBMIT LOGIC ---
+  leadForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    
+    // UI Loading State
+    statusMessage.textContent = "Securing connection...";
+    statusMessage.className = "text-gray";
+    statusMessage.classList.remove("hidden");
+    submitButton.disabled = true;
+    submitButton.style.opacity = "0.6";
 
-    // Submit Logic
-    leadForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      statusMessage.textContent = "Processing secure application...";
-      statusMessage.className = "text-gray";
-      submitButton.disabled = true;
-      submitButton.style.opacity = "0.6";
+    try {
+      const formData = new FormData(leadForm);
+      const timestamp = Date.now();
+      
+      // 1. Upload Files first (if any)
+      const files = fileInput.files;
+      let filePaths = [];
 
-      try {
-        const files = fileInput.files;
-        let filePayload = [];
-
-        // Check file sizes (Limit 3MB per file)
-        for(let i=0; i<files.length; i++){
-            if(files[i].size > 3 * 1024 * 1024) {
-                throw new Error("File " + files[i].name + " is too large. Max 3MB allowed.");
-            }
-        }
-
-        if (files.length > 0) {
-          statusMessage.textContent = "Uploading files (this may take a moment)...";
-          filePayload = await Promise.all(Array.from(files).map(fileToBase64));
-        }
-
-        const formData = new FormData(leadForm);
-        const dataObj = Object.fromEntries(formData.entries());
-        if (filePayload.length > 0) dataObj.files = filePayload;
-
-        const response = await fetch(GOOGLE_SHEET_ENDPOINT, {
-          method: "POST",
-          body: JSON.stringify(dataObj)
-        });
-
-        const resultText = await response.text(); 
+      if (files.length > 0) {
+        statusMessage.textContent = `Encrypting and uploading ${files.length} document(s)...`;
         
-        if (resultText.includes("Error")) {
-            throw new Error(resultText);
-        }
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          
+          // Client-side size check (10MB)
+          // 10MB = 10 * 1024 * 1024 bytes
+          if(file.size > 10 * 1024 * 1024) throw new Error(`File ${file.name} is too large (Max 10MB).`);
 
-        statusMessage.textContent = "Success! We received your application.";
-        statusMessage.className = "text-success";
-        leadForm.reset();
-        
-        // Reset slider
-        slider.value = 50000;
-        display.textContent = "$50,000";
-        
-        phoneContainer.classList.remove("expanded");
-      } catch (error) {
-        console.error(error);
-        statusMessage.textContent = "Error: " + error.message;
-        statusMessage.className = "text-error";
-      } finally {
-        submitButton.disabled = false;
-        submitButton.style.opacity = "1";
+          // Create a unique path
+          const filePath = 'uploads/' + timestamp + '_' + file.name;
+          const storageRef = ref(storage, filePath);
+          
+          // Upload ONLY (Do not ask for download URL afterwards)
+          await uploadBytes(storageRef, file);
+          
+          // Save the reference path so Admin can find it later
+          filePaths.push(filePath); 
+        }
       }
-    });
-  </script>
+
+      // 2. Prepare Data Object
+      statusMessage.textContent = "Finalizing secure application...";
+      
+      const loanApplication = {
+        firstName: formData.get("firstName"),
+        lastName: formData.get("lastName"),
+        businessName: formData.get("businessName"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        amountNeeded: formData.get("amountNeeded"),
+        ageOfBusiness: formData.get("ageOfBusiness"),
+        avgRevenue: formData.get("avgRevenue"),
+        hasChecking: formData.get("hasChecking"),
+        needImmediately: formData.get("needImmediately"),
+        agreePrivacy: true,
+        submittedAt: serverTimestamp(),
+        filePaths: filePaths // Saving the storage paths
+      };
+
+      // 3. Save to Firestore Database
+      await addDoc(collection(db, "loan_applications"), loanApplication);
+
+      // Success UI
+      statusMessage.classList.add("hidden");
+      successMessage.classList.remove("hidden");
+      leadForm.reset();
+      
+      slider.value = 50000;
+      display.textContent = "$50,000";
+      phoneContainer.classList.remove("expanded");
+
+    } catch (error) {
+      console.error("Submission Error:", error);
+      statusMessage.textContent = "Error: " + error.message;
+      statusMessage.className = "text-error";
+      successMessage.classList.add("hidden");
+    } finally {
+      submitButton.disabled = false;
+      submitButton.style.opacity = "1";
+    }
+  });
+</script>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>

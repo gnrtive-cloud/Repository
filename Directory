@@ -907,12 +907,12 @@
   // --- CONFIGURATION ---
   // PASTE YOUR FIREBASE CONFIG HERE (The one you copied earlier)
 const firebaseConfig = {
-  apiKey: "AIzaSyCE8v3hv0Smt57HWY62q8wXuGB0jf0rnTE",
-  authDomain: "safefundr-v2.firebaseapp.com",
+  apiKey: "",
+  authDomain: "",
   projectId: "safefundr-v2",
   storageBucket: "safefundr-v2.firebasestorage.app",
-  messagingSenderId: "727467428238",
-  appId: "1:727467428238:web:88ed8674f60752e3b7fcdf"
+  messagingSenderId: "",
+  appId: ""
 };
 
   // Initialize Firebase
